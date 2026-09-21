@@ -9,4 +9,7 @@
 
 	# Locale
 	i18n.defaultLocale = "en_US.UTF-8";
+
+	# Tailscale service
+	services.tailscale.enable = true;
 }
