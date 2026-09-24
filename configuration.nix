@@ -13,7 +13,8 @@
       ./modules/users.nix
       ./modules/cli-tools.nix
       ./modules/desktop.nix
-      ./modules/window-manager.nix
+      ./modules/nvidia.nix
+      ./modules/noctalia.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
