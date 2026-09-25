@@ -40,6 +40,7 @@
 		perl
 		python3
 		tcl
+    gnumake
 
 		# HTTP/S requests
 		curl

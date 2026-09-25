@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, pkgs, ... }:
 {
 	programs.fish = {
 		enable = true;
@@ -20,9 +20,10 @@
 			clc = "clear; fastfetch";
 			q = "qs -c ii";
 			og = "command";
-			make = "gmake";
 			please = "eval sudo (history -1)";
-		};
+		} // lib.optionalAttrs pkgs.stdenv.isDarwin {
+      make = "gmake";
+    };
 
 		shellAbbrs = {
 			vim = "nvim";
