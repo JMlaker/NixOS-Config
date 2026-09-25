@@ -51,13 +51,17 @@
 		ripgrep
 		fastfetch
 		eza
+    fd
 
 		# Terminal multiplexer
 		tmux
+
+    # Other useful tools
+    imagemagick
 	];
 
 	# Add global environment variables
-	enviornment.sessionVariables = {
+	environment.sessionVariables = {
 		TERMINAL = "kitty"; # For the rare program that needs it
 		EDITOR = "nvim";    # Default editor for many cli tools
 	};

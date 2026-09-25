@@ -9,6 +9,7 @@
 	imports = [
 		../../modules/home/kitty.nix
 		../../modules/home/fish.nix
+		../../modules/home/nvim.nix
 	];
 
 	# Do not change this value :3

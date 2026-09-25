@@ -3,7 +3,8 @@
 	imports = [
 		./hardware-configuration.nix
 		../../users/josh/default.nix
-		../../modules/system/common.nix
+		../../modules/system/common.nix 
+    ../../modules/system/claude.nix
 	];
 
 	# Boot loader configs
