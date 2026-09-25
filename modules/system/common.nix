@@ -49,10 +49,18 @@
 		htop
 		tree
 		ripgrep
+		fastfetch
+		eza
 
 		# Terminal multiplexer
 		tmux
 	];
+
+	# Add global environment variables
+	enviornment.sessionVariables = {
+		TERMINAL = "kitty"; # For the rare program that needs it
+		EDITOR = "nvim";    # Default editor for many cli tools
+	};
 
 	security.sudo.wheelNeedsPassword = true;
 	documentation.nixos.enable = false; # Use Google and/or Claude like a gaymer
