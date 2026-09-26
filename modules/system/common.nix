@@ -57,9 +57,11 @@
 
 		# Terminal multiplexer
 		tmux
+    screen
 
     # Other useful tools
     imagemagick
+    podman
 	];
 
 	# Add global environment variables

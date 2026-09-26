@@ -26,6 +26,7 @@
 						useGlobalPkgs = true;
 						useUserPackages = true;
 						extraSpecialArgs = { inherit inputs; };
+            backupFileExtension = "bak";
 						users.josh = ./users/josh/home.nix;
 					};
 				}
