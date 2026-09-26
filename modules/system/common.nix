@@ -3,7 +3,7 @@
 # Collection of common system configuration across hosts
 #
 
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
 	imports = [
 		./ssh.nix
@@ -17,10 +17,17 @@
 	# Enable garbage collector
 	nix.gc = {
 		automatic = true;
-		dates = "weekly";
 		options = "--delete-older-than 30d";
-	};
-	nix.settings.auto-optimise-store = true;
+	}
+  // lib.optionalAttrs pkgs.stdenv.isLinux {
+    dates = "weekly";
+  }
+  // lib.optionalAttrs pkgs.stdenv.isDarwin {
+    interval = [ { Weekday = 7; Hour = 0; Minute = 0; } ]; 
+  };
+
+  nix.settings.auto-optimise-store = !pkgs.stdenv.isDarwin;
+  nix.optimise.automatic = true;
 
 	# Allow fish as a default shell
 	programs.fish.enable = true;
@@ -70,16 +77,6 @@
 		TERMINAL = "kitty"; # For the rare program that needs it
 		EDITOR = "nvim";    # Default editor for many cli tools
 	};
-
-	security.sudo.wheelNeedsPassword = true;
-	documentation.nixos.enable = false; # Use Google and/or Claude like a gaymer
-
-	services.automatic-timezoned.enable = true;
-	i18n.defaultLocale = "en_US.UTF-8";
-
-  hardware.bluetooth.enable = false;
-  services.power-profiles-daemon.enable = true;
-  services.upower.enable = true;
 
 	system.autoUpgrade.enable = false; # Opt-in behavior for ease of debugging
 }
