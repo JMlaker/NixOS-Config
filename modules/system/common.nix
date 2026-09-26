@@ -14,7 +14,7 @@
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 	nixpkgs.config.allowUnfree = true;
 
-	# Default enable garbage collector
+	# Enable garbage collector
 	nix.gc = {
 		automatic = true;
 		dates = "weekly";
@@ -25,10 +25,11 @@
 	# Allow fish as a default shell
 	programs.fish.enable = true;
 
+  # System packages
 	environment.systemPackages = with pkgs; [
 		# Text editors
 		vim
-		neovim
+ 	  neovim
 
 		# Version control
 		git
@@ -36,7 +37,8 @@
 		# Shells
 		tcsh
 
-		# Programming languages
+		# General use programming languages
+    # for ad-hoc programming
 		perl
 		python3
 		tcl
@@ -60,7 +62,6 @@
     screen
 
     # Other useful tools
-    imagemagick
     podman
 	];
 

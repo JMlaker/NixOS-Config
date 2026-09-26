@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, config, pkgs, ... }:
 {
   programs.neovim = {
     enable = true;
@@ -195,6 +195,7 @@
           end, { desc = "Focus explorer" })
         '';
       }
+    ] ++ lib.optional config.programs.claude-code.enable 
       {
         plugin = claudecode-nvim;
         type = "lua";
@@ -215,8 +216,7 @@
           map("n", "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", { desc = "Accept diff" })
           map("n", "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", { desc = "Deny diff" })
         '';
-      }
-    ];
+      };
 
     extraPackages = with pkgs; [
       tree-sitter
