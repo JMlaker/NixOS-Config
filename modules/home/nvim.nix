@@ -168,7 +168,16 @@
             input = { enabled = true },
             lazygit = { enabled = true },
             notifier = { enabled = true },
-            picker = { enabled = true },
+            picker = { 
+              enabled = true,
+              sources = {
+                explorer = {
+                  layout = {
+                    layout = { width = 32 }
+                  },
+                },
+              },
+            },
             quickfile = { enabled = true },
             scope = { enabled = true },
             scroll = { enabled = true },

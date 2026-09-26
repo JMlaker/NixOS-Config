@@ -5,6 +5,7 @@
 		../../users/josh/default.nix
 		../../modules/system/common.nix 
     ../../modules/system/claude.nix
+    ../../modules/system/niri.nix
 	];
 
 	# Boot loader configs

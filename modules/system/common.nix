@@ -41,6 +41,7 @@
 		python3
 		tcl
     gnumake
+    gcc
 
 		# HTTP/S requests
 		curl
@@ -72,6 +73,10 @@
 
 	services.automatic-timezoned.enable = true;
 	i18n.defaultLocale = "en_US.UTF-8";
+
+  hardware.bluetooth.enable = false;
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 
 	system.autoUpgrade.enable = false; # Opt-in behavior for ease of debugging
 }
